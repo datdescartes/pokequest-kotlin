@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="MonsterItemBinding">
+
+        <import type="com.arya21.pokequest.domain.Monster" />
+
+        <variable
+            name="item"
+            type="Monster" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="@dimen/grid_item_margin"
+        android:foreground="?selectableItemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white">
+
+            <ImageView
+                android:id="@+id/ivThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/app_name"
+                app:imageUrl="@{item.imageUrl}"
+                app:transitionName="@{item.id + ``}"
+                android:padding="@dimen/default_margin"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:layout_marginRight="@dimen/default_margin"
+                app:layout_constraintBottom_toBottomOf="@+id/ivThumbnail"
+                android:background="#DADADA"/>
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_margin"
+                android:textSize="@dimen/list_item_monster_name"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:text="@{item.name}"
+                app:transitionName="@{item.name}"
+                android:textAllCaps="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ivThumbnail"
+                app:layout_constraintStart_toStartOf="@+id/ivThumbnail"
+                app:layout_constraintTop_toBottomOf="@+id/ivThumbnail"
+                tools:text="Pikachu" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

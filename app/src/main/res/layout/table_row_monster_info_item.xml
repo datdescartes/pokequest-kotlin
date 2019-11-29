@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="TableRowMonsterInfoBinding">
+        <variable
+            name="item"
+            type="kotlin.Pair&lt;String, String>" />
+    </data>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/attrib_name"
+            android:text="@{item.first}"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/attrib_value"
+            android:paddingEnd="8dp"
+            android:text="@{item.second}"
+            android:textStyle="normal" />
+    </TableRow>
+</layout>

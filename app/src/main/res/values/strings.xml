@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PokeQuest</string>
+    <string name="title_activity_monsters">MonstersActivity</string>
+    <string name="action_settings">Settings</string>
+</resources>

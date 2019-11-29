@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="TableRowMonsterBaseStatBinding">
+
+        <variable
+            name="item"
+            type="kotlin.Pair&lt;String, Integer>" />
+    </data>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/attrib_name"
+            android:text="@{item.first}"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/attrib_value"
+            android:paddingLeft="8dp"
+            android:text="@{`` + item.second}"
+            android:textStyle="normal" />
+
+        <ProgressBar
+            android:id="@+id/progressbar_stat"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:progress="@{item.second}"
+            android:indeterminate="false"
+            android:max="100" />
+    </TableRow>
+</layout>
