@@ -2,4 +2,7 @@
     <string name="app_name">PokeQuest</string>
     <string name="title_activity_monsters">MonstersActivity</string>
     <string name="action_settings">Settings</string>
+    <string name="search">Search</string>
+    <string name="info">Info</string>
+    <string name="base_stats">Base stats</string>
 </resources>
